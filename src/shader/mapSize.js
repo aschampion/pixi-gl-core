@@ -4,8 +4,8 @@
  * @param type {String}
  * @return {Number}
  */
-var mapSize = function(type) 
-{ 
+var mapSize = function(type)
+{
     return GLSL_TO_SIZE[type];
 };
 
@@ -21,6 +21,11 @@ var GLSL_TO_SIZE = {
     'ivec3':    3,
     'ivec4':    4,
 
+    'uint':     1,
+    'uvec2':    2,
+    'uvec3':    3,
+    'uvec4':    4,
+
     'bool':     1,
     'bvec2':    2,
     'bvec3':    3,
@@ -30,7 +35,13 @@ var GLSL_TO_SIZE = {
     'mat3':     9,
     'mat4':     16,
 
-    'sampler2D':  1
+    'sampler2D':  1,
+    'isampler2D': 1,
+    'usampler2D': 1,
+
+    'sampler3D':  1,
+    'isampler3D': 1,
+    'usampler3D': 1,
 };
 
 module.exports = mapSize;

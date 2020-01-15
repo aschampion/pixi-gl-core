@@ -58,6 +58,11 @@ var GLSL_SINGLE_SETTERS = {
     ivec3: function setSingleIvec3(gl, location, value) { gl.uniform3i(location, value[0], value[1], value[2]); },
     ivec4: function setSingleIvec4(gl, location, value) { gl.uniform4i(location, value[0], value[1], value[2], value[3]); },
 
+    uint: function setSingleInt(gl, location, value) { gl.uniform1ui(location, value); },
+    uvec2: function setSingleIvec2(gl, location, value) { gl.uniform2ui(location, value[0], value[1]); },
+    uvec3: function setSingleIvec3(gl, location, value) { gl.uniform3ui(location, value[0], value[1], value[2]); },
+    uvec4: function setSingleIvec4(gl, location, value) { gl.uniform4ui(location, value[0], value[1], value[2], value[3]); },
+
     bool: function setSingleBool(gl, location, value) { gl.uniform1i(location, value); },
     bvec2: function setSingleBvec2(gl, location, value) { gl.uniform2i(location, value[0], value[1]); },
     bvec3: function setSingleBvec3(gl, location, value) { gl.uniform3i(location, value[0], value[1], value[2]); },
@@ -68,6 +73,11 @@ var GLSL_SINGLE_SETTERS = {
     mat4: function setSingleMat4(gl, location, value) { gl.uniformMatrix4fv(location, false, value); },
 
     sampler2D: function setSingleSampler2D(gl, location, value) { gl.uniform1i(location, value); },
+    usampler2D: function setSingleSampler2D(gl, location, value) { gl.uniform1i(location, value); },
+    isampler2D: function setSingleSampler2D(gl, location, value) { gl.uniform1i(location, value); },
+    sampler3D: function setSingleSampler2D(gl, location, value) { gl.uniform1i(location, value); },
+    usampler3D: function setSingleSampler2D(gl, location, value) { gl.uniform1i(location, value); },
+    isampler3D: function setSingleSampler2D(gl, location, value) { gl.uniform1i(location, value); },
 };
 
 var GLSL_ARRAY_SETTERS = {
@@ -79,11 +89,20 @@ var GLSL_ARRAY_SETTERS = {
     ivec2: function setIvec2Array(gl, location, value) { gl.uniform2iv(location, value); },
     ivec3: function setIvec3Array(gl, location, value) { gl.uniform3iv(location, value); },
     ivec4: function setIvec4Array(gl, location, value) { gl.uniform4iv(location, value); },
+    uint: function setIntArray(gl, location, value) { gl.uniform1uiv(location, value); },
+    uvec2: function setIvec2Array(gl, location, value) { gl.uniform2uiv(location, value); },
+    uvec3: function setIvec3Array(gl, location, value) { gl.uniform3uiv(location, value); },
+    uvec4: function setIvec4Array(gl, location, value) { gl.uniform4uiv(location, value); },
     bool: function setBoolArray(gl, location, value) { gl.uniform1iv(location, value); },
     bvec2: function setBvec2Array(gl, location, value) { gl.uniform2iv(location, value); },
     bvec3: function setBvec3Array(gl, location, value) { gl.uniform3iv(location, value); },
     bvec4: function setBvec4Array(gl, location, value) { gl.uniform4iv(location, value); },
     sampler2D: function setSampler2DArray(gl, location, value) { gl.uniform1iv(location, value); },
+    usampler2D: function setSampler2DArray(gl, location, value) { gl.uniform1iv(location, value); },
+    isampler2D: function setSampler2DArray(gl, location, value) { gl.uniform1iv(location, value); },
+    sampler3D: function setSampler2DArray(gl, location, value) { gl.uniform1iv(location, value); },
+    usampler3D: function setSampler2DArray(gl, location, value) { gl.uniform1iv(location, value); },
+    isampler3D: function setSampler2DArray(gl, location, value) { gl.uniform1iv(location, value); },
 };
 
 function generateSetter(name, uniform)
